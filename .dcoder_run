@@ -1,0 +1,23 @@
+# write commands to install modules/lib and run your project, one in each line.
+# php commands are available along with other basic linux commands.
+# command to run
+
+#php -S localhost:8080
+
+
+
+git config --global user.email "mostafa_b2200@yahoo.com"
+git config --global user.name "mbadr2200"
+git init
+git add . 
+git commit -m "first"
+#git remote add origin https://github.com/mbadr2200/nokta.git
+#git init
+#git add .
+#git commit -m "first commit"
+#git branch -M master
+#git remote add origin https://github.com/mbadr2200/nokta.git
+#git push -u origin master
+git remote add origin https://mbadr2200:Facebook2200@github.com/mbadr2200/nokta.git
+git branch -M main
+git push -u origin main

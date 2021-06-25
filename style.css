@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
+
+body
+  {
+    font-family: 'Rakkas', cursive;
+    margin:0;
+    padding:0;
+    background-color:#f9f9f9;
+  }
+    
+    form
+    {
+      padding:30px;  
+      box-sizing: border-box;
+    }
+    label , h1 , h4
+    {
+      color: #fa448c;
+      font-weight:bold;
+      display:block;
+      text-align:center;
+      margin : 5px auto ;
+      margin-top:0px;
+      
+    }
+    input[type=text] , select , input[type=date],input[type=number]{
+      
+      background-color:#DFE6E9;
+      padding:10px;
+      border: none;
+      width:100%;
+      margin: 5px auto ;
+      text-align:center;
+      
+      
+    }
+    input[type=submit]
+    {
+      padding:10px;
+      background-color: #294b93;
+      color:white;
+      font-weight:bold;
+      border:none;
+      border-radius:2px;
+      box-shadow:none;
+      display:block;
+      width:100%;
+      margin:10px auto ;
+      margin-bottom: 0px;
+      font-family: 'Rakkas', cursive;
+      
+    }
+    .result
+    {
+      text-align:center;
+      
+    }
+    a
+    {
+      text-decoration:none;
+    }
+    a.btn
+    {
+      display:block;
+      padding:10px;
+      color:white;
+      background-color:#294b93;
+      text-align:center;     
+      text-transform: uppercase;
+      margin:20px auto;
+      margin-top:0px;
+      font-size:30px;
+    }
+    .del_btn
+    {
+      background-color:#fa448c!important;
+    }
+    .list_container
+    {
+      display:flex;
+      max-width:100%;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      margin:0px;
+      padding:0px;
+    }
+    .list
+    {
+      display:flex;
+      flex-direction:row-reverse;
+      justify-contetnt:center;
+      align-items:center;
+      list-style:none;
+      text-align:center;
+      background-color:#DFE6E9;
+      padding:10px; 
+      color : #294b93!important;
+      margin:10px auto;
+      width: 40%;
+      border-radius:5px; 
+      text-align:center;
+    }
+    .list div
+    {
+      width:50%;
+    }
+    .list div:nth-child(2)
+    {
+      color:red;
+    }
+    .text
+    {
+      color:#A6A1A1;
+      text-align:center;
+    }
