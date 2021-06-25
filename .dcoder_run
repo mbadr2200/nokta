@@ -8,9 +8,9 @@
 
 git config --global user.email "mostafa_b2200@yahoo.com"
 git config --global user.name "mbadr2200"
-git init
+#git init
 git add . 
-git commit -m "first"
+git commit -m "add category , inventory , item and link it"
 #git remote add origin https://github.com/mbadr2200/nokta.git
 #git init
 #git add .
@@ -18,6 +18,6 @@ git commit -m "first"
 #git branch -M master
 #git remote add origin https://github.com/mbadr2200/nokta.git
 #git push -u origin master
-git remote add origin https://mbadr2200:Facebook2200@github.com/mbadr2200/nokta.git
-git branch -M main
+#git remote add origin https://mbadr2200:Facebook2200@github.com/mbadr2200/nokta.git
+#git branch -M main
 git push -u origin main
