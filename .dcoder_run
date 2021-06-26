@@ -23,5 +23,5 @@
 git config --global user.email "mostafa_b2200@yahoo.com"
 git config --global user.name "mbadr2200"
 git add . 
-git commit -m "add category , inventory , item and link it"
+git commit -m "after strcture refractor first_stgae"
 git push -u origin main
