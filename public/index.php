@@ -1,10 +1,6 @@
-<html>
- <head>
- <link rel="stylesheet" href="/style.css">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PHP Test</title>
- </head>
- <body>
+<?php 
+  include "../includes/layout/header.php";
+?>
    <h1>أختر الإضافة</h1>
    <a href="/add_cat.php" class ="btn">إضافة تصنيف</a>
    <a href="/add_inv.php" class ="btn">إضافة مخزن</a>
@@ -17,6 +13,7 @@
   ?>
    
     </div>
-
- </body>
-</html>
+<?php 
+  include "../includes/layout/footer.php";
+?>
+ 

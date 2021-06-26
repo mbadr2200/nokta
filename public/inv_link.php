@@ -1,6 +1,6 @@
-<html>
+
 <?php
-   include "db.php";
+   require_once("../includes/db.php");
    
    if(isset($_POST['submit']))
    {
@@ -26,25 +26,18 @@
     
    }
   
-   
+include "../includes/layout/header.php";   
+include "../includes/layout/nav.php";   
  ?>
  
-<head>
-<link rel="stylesheet" href="/style.css">
- 
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tbya app</title>
- </head>
- <body>
- 
-   <a href="/index.php" class ="btn"> الرئيسية </a>
+   
    <h1>ربط المخازن </h1>
    <form action ="inv_link.php" method ="POST">
    
      <label>الصنف</label>
-     <?php include "item_select.php"; ?>
+     <?php include "../includes/item_select.php"; ?>
      <label>المخزن</label>
-     <?php include "inventory_select.php"; ?>
+     <?php include "../includes/inventory_select.php"; ?>
      <label>الكمية</label>
      <input type="number" required name="quantity"\>
      <label>تاريخ الصلاحية</label>
@@ -92,6 +85,6 @@
   ?>
    
     </div>
-
- </body>
-</html>
+<?php 
+  include "../includes/layout/footer.php";
+?>

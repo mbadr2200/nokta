@@ -78,32 +78,35 @@ body
     .list_container
     {
       display:flex;
+      flex-wrap:wrap;
       max-width:100%;
       justify-content:center;
       align-items:center;
-      flex-wrap:wrap;
       margin:0px;
-      padding:0px;
+      padding:10px;
     }
     .list
     {
       display:flex;
       flex-direction:row-reverse;
+      width:100%;
       justify-contetnt:center;
       align-items:center;
       list-style:none;
       text-align:center;
-      background-color:#DFE6E9;
+      background-color:#e4eaed;
       padding:10px; 
       color : #294b93!important;
-      margin:10px auto;
-      width: 40%;
+      margin:5px;
       border-radius:5px; 
-      text-align:center;
     }
-    .list div
+    .list > div
     {
-      width:50%;
+      background:#DFE6E2;
+      margin: 5px;
+      padding:5px;
+      border-radius:5px;
+      flex:1;
     }
     .list div:nth-child(2)
     {
