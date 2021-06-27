@@ -1,6 +1,7 @@
 
 <?php
    require_once("../includes/db.php");
+   require_once("../includes/functions.php");
    
    if(isset($_POST['submit']))
    {
@@ -26,7 +27,8 @@
     
    }
   
-include "../includes/layout/header.php";   
+include "../includes/layout/header.php";  
+$page_name = "link"; 
 include "../includes/layout/nav.php";   
  ?>
  
@@ -45,46 +47,6 @@ include "../includes/layout/nav.php";
      <input type="submit" value="إضافة" name="submit"\>
      
    </form>
-   <div class="result">
-   
-   
-   <?php 
-          
-     // Retrive data from mysql    
-     $query = "SELECT * FROM medications";
-     
-     $result = $conn->query($query);
-
-     if ($result->num_rows > 0) 
-     {
-       ?>
-       <ul class="list_container">
-       <?php
-      // output data of each row
-       while($row = $result->fetch_assoc()) 
-       {
-       ?>
-       </ul>
-       <?php
-       if(!empty($row["name"])){
-       ?>
-       <li class="list">
-       <?php 
-         echo $row["name"];
-         
-       ?>
-       </li>
-       <?php
-       }}
-       
-      }
-      else 
-      {
-       echo "لا توجد أصناف مضافة";     
-      }
-  ?>
-   
-    </div>
 <?php 
   include "../includes/layout/footer.php";
 ?>

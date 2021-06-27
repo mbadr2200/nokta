@@ -1,7 +1,7 @@
 <?php 
      
      
-      $items = getItems();
+      $items = getLinkedItems();
 
      if($items->num_rows > 0 )
      {

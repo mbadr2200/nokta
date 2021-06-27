@@ -1,6 +1,6 @@
 <?php
 
-function getItems ()
+function getLinkedItems ()
 {
   global $conn ; 
   
@@ -12,5 +12,37 @@ function getItems ()
   return $items;
    
 };
+
+function getCategories()
+{
+  global $conn ; 
+  
+  $query = "SELECT categories.name , COUNT(items.id) AS items_count FROM categories LEFT JOIN items ON categories.id = items.cat_id GROUP BY categories.name";
+  
+     
+  $categories = $conn->query($query);
+  
+  return $categories;
+}
+
+function getInventories()
+{
+  global $conn ; 
+  
+  $query = "SELECT inventroies.name , COUNT(store.id) AS items_count FROM inventroies LEFT JOIN store ON inventroies.id = store.inv_id GROUP BY inventroies.name";
+  
+     
+  $inventroies = $conn->query($query);
+  
+  return $inventroies;
+}
+
+function nav_active($page_name,$tab)
+{
+  if($page_name == $tab)
+  {
+    echo "active";
+  }
+}
 
 ?>

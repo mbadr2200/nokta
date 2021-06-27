@@ -1,12 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
 
+:root
+{
+  --main_orange_color:#F26627;
+  --faded_orange_color:#F9A26C;
+  --main_white_color:#EFEEEE;
+  --light_blue_color:#9BD7D1;
+  --deep_blue_color:#325D79;
+  
+}
+*
+  {
+    box-sizing: border-box;
+  }
 body
   {
     font-family: 'Rakkas', cursive;
     margin:0;
     padding:0;
-    background-color:#f9f9f9;
+    background-color:var(--main_white_color);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-height:90vh;
   }
+    
+
     
     form
     {
@@ -15,7 +35,7 @@ body
     }
     label , h1 , h4
     {
-      color: #fa448c;
+      color: var( --main_orange_color);
       font-weight:bold;
       display:block;
       text-align:center;
@@ -61,15 +81,17 @@ body
     }
     a.btn
     {
-      display:block;
       padding:10px;
       color:white;
-      background-color:#294b93;
+      background-color:var( --deep_blue_color);
       text-align:center;     
       text-transform: uppercase;
       margin:20px auto;
       margin-top:0px;
       font-size:30px;
+      width:80%;
+      border-radius:5px;
+      position:relative;
     }
     .del_btn
     {
@@ -102,7 +124,7 @@ body
     }
     .list > div
     {
-      background:#DFE6E2;
+      background:rgba(255,255,255,.4);
       margin: 5px;
       padding:5px;
       border-radius:5px;
@@ -117,3 +139,105 @@ body
       color:#A6A1A1;
       text-align:center;
     }
+ .add_buttons_container
+ {
+   display:flex;
+   background:rgba(230,230,230,.2);
+   border-radius:5px;
+   justify-content:center;
+   align-items:center;
+   padding:5px;
+   width : 95%;
+   margin: 0 auto ;
+ }
+ .add_btn
+ {
+   background : #DFE6E9;
+   color:#294b93;
+   padding : 10px;
+   margin: 0 10px;
+   border-radius:10px;
+   flex:1;
+   text-align:center;
+   transition: all .3s ease ;
+ }
+ .add_btn:hover
+  {
+   color:#DFE6E9;
+   background:#294b93;
+  }
+  
+  .cat:before , .inv:before , .inv_link:before , .item:before 
+  {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    overflow:hidden;
+    font-size:110px;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:5%;
+    transform:rotate(45deg);      
+  }
+  .cat:before
+  {
+    content: "\f0e8";
+  }
+  .inv:before
+  {
+    content: "\f468";
+  }
+  .inv_link:before
+  {
+    content: "\f0c1";
+  }
+  .item:before
+  {
+    content: "\f485";
+  }
+
+ #tabs
+  {
+    background-color:var(--main_orange_color);
+    display:flex;
+    width:100vw;
+    max-width:100%;    
+    justify-content:space-between;
+    align-items:center;
+    padding:10px;
+    position:fixed;
+    bottom:0;
+    z-index:1;  
+    -webkit-box-shadow: 0px -5px 1px -3px rgba(0,0,0,0.13); 
+    box-shadow: 0px -5px 1px -3px rgba(0,0,0,0.13);  
+  }
+  .tab
+  {
+    display:flex;
+    justify-content:center;
+    color:rgba(255,255,255,.8);
+    align-items:center;
+    cursor:pointer; 
+    border-radius:25px;
+    padding:0px 20px;
+    margin:0 5px;
+  }
+  .tab i
+  {
+    font-size:1.2em;
+  }
+  .tab  p
+  {
+    overflow:hidden;
+    max-width:0;
+  }
+  .tab.active
+  {
+    background-color:rgba(255,255,255,.2);
+    
+  }
+  .tab.active p
+  {
+    margin-left:10px;
+    max-width:80vw;
+  }

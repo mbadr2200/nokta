@@ -1,6 +1,7 @@
 <?php
 
   require_once("../includes/db.php");
+  require_once("../includes/functions.php");
      
      if(isset($_POST['submit']))
      {
@@ -36,48 +37,9 @@
      
    </form>
    <div class="result">
-   <h4>التصنيفات</h4>
-   
-   <?php 
-
-     // Retrive data from mysql    
-     
-     $query_categories = "SELECT * FROM categories";
-     
-     
-     $categories = $conn->query($query_categories);
-     
-     
-     if($categories->num_rows > 0 )
-     {
-       ?>
-       <ul class ="list_container">
-       <?php
-       while($catgory = $categories->fetch_assoc())
-       {
-         $catgory_id = $catgory['id'];
-         
-         $query_items = "SELECT * FROM items WHERE cat_id = $catgory_id";
-         
-         $items = $conn->query($query_items);
-   
-         ?>
-         
-           <li class = "list">
-             <div> <?php echo $catgory['name']; ?> </div>
-             <div> <?php echo $items->num_rows; ?> </div>
-           </li>
-         
-         <?php
-       }
-       ?>
-       </ul>
-       <?php
-     }
-     
-  ?>
-   
-    </div>
+     <h4>التصنيفات</h4>
+     <?php include "../includes/cat_list.php"?>      
+   </div>
 <?php 
   include "../includes/layout/footer.php";
 ?>
