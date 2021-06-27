@@ -34,7 +34,7 @@
     <input type="text" name="unit" required minlength="2"\>
     <label>التصنيف</label>
     <?php include "../includes/cat_select.php" ; ?>
-    <input type="submit" value="إضافة" name="submit"\>
+    <input type="submit" value="إضافة" name="submit" class = "insert_btn"\>
   </form>
    
   <div class="result">

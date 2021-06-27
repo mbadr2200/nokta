@@ -1,6 +1,11 @@
 
 
-
+<?php 
+  if(!isset($page_name))
+  {
+    $page_name = null ;
+  }
+?>
 
 <div class="tabs" id="tabs">
   <a class="tab <?php nav_active($page_name,'home')?> " href="/index.php">

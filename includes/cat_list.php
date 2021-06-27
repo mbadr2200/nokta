@@ -12,13 +12,12 @@
        <?php
        while($catgory = $categories->fetch_assoc())
        {
-         
          ?>
-         
-           <li class = "list">
+           
+           <a class = "list" href="details.php?category=<?php echo $catgory['id']?>"">
              <div> <?php echo $catgory['name']; ?> </div>
              <div> <?php echo $catgory['items_count'] ?> </div>
-           </li>
+           </a>
          
          <?php
        }

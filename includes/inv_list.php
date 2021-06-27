@@ -15,10 +15,10 @@
          
          ?>
          
-           <li class = "list">
+           <a class = "list" href="details.php?inventory=<?php echo $inventory['id']?>"">
              <div> <?php echo $inventory['name']; ?> </div>
              <div> <?php echo $inventory['items_count'] ?> </div>
-           </li>
+           </a>
          
          <?php
        }
