@@ -240,7 +240,7 @@ body
     border-radius:25px;
     padding:0px 20px;
     margin:0 5px;
-    transition : cubic-bezier(.17,.67,.83,.67) 500ms all ;
+    transition : cubic-bezier(.17,.67,.83,.67) 200ms all ;
   }
   .tab i
   {
@@ -250,6 +250,7 @@ body
   {
     overflow:hidden;
     max-width:0;
+    transition : cubic-bezier(.17,.67,.83,.67) 200ms all ;
   }
   .tab.active
   {
@@ -259,12 +260,12 @@ body
   .tab.active p
   {
     margin-left:10px;
-    transition : cubic-bezier(.17,.67,.83,.67) 500ms all ;
+    transition : cubic-bezier(.17,.67,.83,.67) 200ms all ;
     max-width:80vw;
   }
   .tab:hover p
   {
-    margin-left:10px;
+    margin-left:10px;    
     max-width:80vw;
   }
   .tab:hover

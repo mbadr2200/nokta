@@ -4,7 +4,7 @@ function getLinkedItems ()
 {
   global $conn ; 
   
-  $query = "SELECT items.name AS item_name, inventroies.name AS inv_name , store.expiry_date , store.quantity , items.unit FROM inventroies , store , items WHERE store.item_id = items.id AND store.inv_id = inventroies.id";
+  $query = "SELECT items.id AS item_id , items.cat_id AS cat_id ,items.name AS item_name, inventroies.name AS inv_name , store.expiry_date , store.quantity , items.unit FROM inventroies , store , items WHERE store.item_id = items.id AND store.inv_id = inventroies.id";
   
      
   $items = $conn->query($query);
@@ -13,11 +13,35 @@ function getLinkedItems ()
    
 };
 
+function getAllItems()
+{
+   global $conn ; 
+  
+  $query = "SELECT items.name AS item_name , items.id AS item_id , items.unit AS unit , categories.name AS category_name FROM items  JOIN categories ON items.cat_id = categories.id ORDER BY categories.name , items.name";
+  
+     
+  $items = $conn->query($query);
+  
+  return $items;
+}
+function getItemsByInventory($inv_id)
+{
+  
+  global $conn ; 
+  
+  $query = "SELECT store.item_id , items.name AS item_name, items.unit AS unit, store.expiry_date AS expiry_date , store.quantity AS quantity , inventroies.name as inv_name FROM store LEFT JOIN items ON items.id = store.item_id LEFT JOIN inventroies ON inventroies.id = store.inv_id WHERE store.inv_id = $inv_id ORDER BY items.name";
+  
+     
+  $items = $conn->query($query);
+  
+  return $items;
+  
+}
 function getItemsByCategory ($cat_id)
 {
   global $conn ; 
   
-  $query = "SELECT items.id , items.name , SUM(store.quantity) AS total_quantity FROM items , store WHERE items.id = store.item_id AND items.cat_id = $cat_id GROUP BY items.id";
+  $query = "SELECT items.id , items.name , SUM(store.quantity) AS total_quantity FROM items LEFT JOIN store ON items.id = store.item_id WHERE items.cat_id = $cat_id GROUP BY items.id";
   
      
   $items = $conn->query($query);
@@ -25,7 +49,50 @@ function getItemsByCategory ($cat_id)
   return $items;
    
 };
+function getItemById($item_id)
+{
+  global $conn ; 
+  $query = "SELECT * FROM items WHERE id = $item_id LIMIT 1";
+  $item = $conn->query($query);
+  
+  return $item;
+  
+}
+function getItemDataById($item_id)
+{
+  global $conn ; 
+  
+  $query = "SELECT items.id AS item_id ,items.name AS item_name , items.unit AS unit , inventroies.name AS inv_name , inventroies.id AS inventory_id , store.quantity AS quantity , store.expiry_date AS expiry_date  FROM store  JOIN inventroies ON store.inv_id = inventroies.id AND item_id = $item_id JOIN items ON store.item_id = items.id ";
+  
+     
+  $items = $conn->query($query);
+  
+  return $items;
+}
 
+function getInventoryDataById($inv_id)
+{
+  global $conn ; 
+  
+  $query = "SELECT * FROM inventroies WHERE id = $inv_id";
+  
+     
+  $inventory = $conn->query($query);
+  
+  return $inventory;
+}
+
+function getItemTotalQuantity($item_id){
+  global $conn ; 
+  
+  $query = "SELECT SUM(store.quantity) AS total_quantity, items.name FROM store JOIN items ON items.id = store.item_id WHERE item_id = $item_id";
+  
+     
+  $total_quantity = $conn->query($query);
+  $total_quantity = $total_quantity->fetch_assoc();
+  
+  return $total_quantity['total_quantity'];
+}
 function getCategories()
 {
   global $conn ; 

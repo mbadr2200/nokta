@@ -20,28 +20,64 @@
       
        
       $name = $category['name'];
+      $items = getLinkedItems();
+      echo "<h1>{$name}</h1>";
+      include "../includes/items_quantity_list.php";
        
     }
-     
-    
+
     
   }
   elseif(isset($_GET["inventory"]))
   {
-     echo "inventory";
+     
+     // if the page is for details 
+     
+     $inventory_id = $_GET["inventory"];
+     $inventory_set = getInventoryDataById($inventory_id);
+     
+     if($inventory_set->num_rows > 0)
+     {
+        $inventory_data = $inventory_set->fetch_assoc();
+        echo "<h1>{$inventory_data['name']}</h1>";
+     }
+     $items = getItemsByInventory($inventory_id);
+     
+     if($items->num_rows > 0 )
+      {
+        $page = "inventory";
+        include "../includes/items_list.php";  
+      }
+    
+     
   }
   elseif(isset($_GET["item"]))
   {
-    echo "item";
+    // the page is for items 
+    $item_id = $_GET["item"];
+    $items = getItemDataById($item_id);
+    $total_quantity = getItemTotalQuantity($item_id);
+    $item = getItemById($item_id);
+    
+    if($item->num_rows > 0)
+    {
+      $item = $item->fetch_assoc();
+      echo "<h1>{$item['name']}</h1>";
+    }
+    echo "<h3>إجمالى الكمية :" . $total_quantity . "  " . $item['unit'] .  "<h3>";
+    
+    
+    if($items->num_rows > 0 )
+    {
+      include "../includes/items_list.php";  
+    }
+    
+
   }
   
   
   
 ?>
- 
-   <h1><?php if(isset($name)) {echo $name ;} ?></h1>
-   
-   <?php include "../includes/items_quantity_list.php"  ?>
    
    
    

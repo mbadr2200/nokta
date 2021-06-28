@@ -10,7 +10,11 @@
   <?php include "../includes/layout/add_buttons.php"; ?>
 
   <div class="result">
-    <?php include "../includes/items_list.php"?> 
+    <?php 
+    $items = getAllItems();
+    $page = "general";
+    include "../includes/items_list.php";
+    ?> 
   </div>
 
 <?php include "../includes/layout/footer.php"; ?>

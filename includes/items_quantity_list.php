@@ -11,7 +11,6 @@
   
        while($item = $items->fetch_assoc())
        {
-        print_r($item); 
          ?>
          
            <a class = "list" href="/details.php?item=<?php echo $item['id']; ?>">
