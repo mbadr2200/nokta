@@ -16,7 +16,7 @@
            
            <a class = "list" href="details.php?category=<?php echo $catgory['id']?>"">
              <div> <?php echo $catgory['name']; ?> </div>
-             <div> <?php echo $catgory['items_count'] ?> </div>
+             <div> <?php echo $catgory['items_count']  ?></div>
            </a>
          
          <?php

@@ -272,3 +272,71 @@ body
   {
     background-color:rgba(255,255,255,.2);
   }
+input[type=submit].edit_btn
+  {
+    padding:10px;
+    background-color:var(--light_blue_color);
+    transition : cubic-bezier(.17,.67,.83,.67) 200ms all ;
+    position:relative;
+  }
+input[type=submit].edit_btn:before
+  {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    overflow:hidden;
+    font-size:110px;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:5%;
+    transform:rotate(45deg);  
+    content: "\f485";
+  }
+ input[type=submit].edit_btn:hover
+ {
+   background-color:var(--deep_blue_color);
+   cursor:pointer;
+ }
+.delete_btn
+  {
+    background:#f03434;
+    padding:10px;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    text-align:center;
+    flex-grow:1;
+    transition : cubic-bezier(.17,.67,.83,.67) 200ms all ;
+  }
+ .delete_btn i 
+ {
+   margin : 0 10px;
+ }
+.delete_btn:hover
+  {
+    background-color:#c92828;
+    cursor:pointer;
+  }
+.delete_btn:before
+  {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    overflow:hidden;
+    font-size:110px;
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:5%;
+    transform:rotate(45deg);  
+    content: "\f485";
+  }
+ .delete_edit
+ {
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   width:100%;
+   padding: 0 20px;
+   flex:1;
+   
+ }

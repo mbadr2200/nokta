@@ -22,6 +22,9 @@
       $name = $category['name'];
       $items = getLinkedItems();
       echo "<h1>{$name}</h1>";
+      echo "<div class ='delete_edit'>";
+   echo "<a href='delete.php?cat_id=".$category["id"]."' class ='delete_btn'>مسح  ${category['name']}   <i class='far fa-trash-alt'></i></a>";
+      echo "</div>";
       include "../includes/items_quantity_list.php";
        
     }
@@ -40,7 +43,12 @@
      {
         $inventory_data = $inventory_set->fetch_assoc();
         echo "<h1>{$inventory_data['name']}</h1>";
+        echo "<div class ='delete_edit'>";
+        echo "<a href='delete.php?cat_id=".$inventory_data["id"]."' class ='delete_btn'>مسح {$inventory_data['name']} <i class='far fa-trash-alt'></i></a>";
+      echo "</div>";
+        
      }
+     
      $items = getItemsByInventory($inventory_id);
      
      if($items->num_rows > 0 )
@@ -63,6 +71,9 @@
     {
       $item = $item->fetch_assoc();
       echo "<h1>{$item['name']}</h1>";
+      echo "<div class ='delete_edit'>";
+      echo "<a href='delete.php?item_id=".$item["id"]."' class ='delete_btn'><i class='far fa-trash-alt'></i>مسح {$item['name']}</a>";
+      echo "</div>";
     }
     echo "<h3>إجمالى الكمية :" . $total_quantity . "  " . $item['unit'] .  "<h3>";
     

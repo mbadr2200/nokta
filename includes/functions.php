@@ -136,5 +136,63 @@ function nav_active($page_name,$tab)
     echo "active";
   }
 }
+function redirect($url)
+{
+  header("Location:{$url}");
+}
 
+function deleteCategoryById($cat_id)
+{
+  
+  global $conn ; 
+  
+  $query = "DELETE FROM categories WHERE id = $cat_id";
+  $result = $conn->query($query);
+  $affected_rows = $conn -> affected_rows;
+  
+  if($result && $affected_rows == 1 )
+  {
+    return "Category deleted ";
+  }
+  else
+  {
+    return "Category deletion failed";
+  }
+}
+function deleteInventoryById($inv_id)
+{
+  
+  global $conn ; 
+  
+  $query = "DELETE FROM inventroies WHERE id = $inv_id";
+  $result = $conn->query($query);
+  $affected_rows = $conn -> affected_rows;
+  
+  if($result && $affected_rows == 1 )
+  {
+    return "Inventory deleted ";
+  }
+  else
+  {
+    return "Inventory deletion failed";
+  }
+}
+function deleteItemById($item_id)
+{
+  
+  global $conn ; 
+  
+  $query = "DELETE FROM items WHERE id = $item_id";
+  $result = $conn->query($query);
+  $affected_rows = $conn -> affected_rows;
+  
+  if($result && $affected_rows == 1 )
+  {
+    return "Item deleted ";
+  }
+  else
+  {
+    return "Item deletion failed";
+  }
+}
 ?>

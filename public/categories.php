@@ -4,6 +4,11 @@
   include "../includes/layout/header.php"; 
   $page_name="cat";
   include "../includes/layout/nav.php";
+  
+  if (isset($_DELETE["cat_id"]))
+  {
+    echo $_DELETE["cat_id"];
+  }
 ?> 
 
   <h1>التصنيفات</h1>
